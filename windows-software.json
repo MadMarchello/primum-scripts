@@ -1,0 +1,189 @@
+{
+  "software": {
+    "development": {
+      "category": "Разработка",
+      "packages": [
+        {
+          "name": "Git",
+          "description": "Система контроля версий",
+          "winget_id": "Git.Git",
+          "choco_id": "git",
+          "official_url": "https://git-scm.com/download/win",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Cursor",
+          "description": "AI-powered code editor",
+          "winget_id": null,
+          "choco_id": null,
+          "official_url": "https://cursor.sh/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Visual Studio Code",
+          "description": "Текстовый редактор для разработки",
+          "winget_id": "Microsoft.VisualStudioCode",
+          "choco_id": "vscode",
+          "official_url": "https://code.visualstudio.com/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Android Studio",
+          "description": "IDE для разработки Android приложений",
+          "winget_id": "Google.AndroidStudio",
+          "choco_id": "androidstudio",
+          "official_url": "https://developer.android.com/studio",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Docker Desktop",
+          "description": "Контейнеризация приложений",
+          "winget_id": "Docker.DockerDesktop",
+          "choco_id": "docker-desktop",
+          "official_url": "https://www.docker.com/products/docker-desktop/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Python",
+          "description": "Язык программирования Python",
+          "winget_id": "Python.Python.3.12",
+          "choco_id": "python",
+          "official_url": "https://www.python.org/downloads/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Node.js",
+          "description": "JavaScript runtime",
+          "winget_id": "OpenJS.NodeJS",
+          "choco_id": "nodejs",
+          "official_url": "https://nodejs.org/",
+          "installer_type": "msi"
+        },
+        {
+          "name": "FVM",
+          "description": "Flutter Version Management",
+          "winget_id": null,
+          "choco_id": "fvm",
+          "official_url": "https://fvm.app/",
+          "installer_type": "exe"
+        }
+      ]
+    },
+    "browsers": {
+      "category": "Браузеры",
+      "packages": [
+        {
+          "name": "Google Chrome",
+          "description": "Веб-браузер от Google",
+          "winget_id": "Google.Chrome",
+          "choco_id": "googlechrome",
+          "official_url": "https://www.google.com/chrome/",
+          "installer_type": "msi"
+        },
+        {
+          "name": "Perplexity",
+          "description": "AI-powered search and answer engine",
+          "winget_id": null,
+          "choco_id": null,
+          "official_url": "https://www.perplexity.ai/",
+          "installer_type": "exe",
+          "note": "Available as web app or downloadable desktop app"
+        }
+      ]
+    },
+    "media": {
+      "category": "Мультимедиа",
+      "packages": [
+        {
+          "name": "VLC Media Player",
+          "description": "Универсальный медиаплеер",
+          "winget_id": "VideoLAN.VLC",
+          "choco_id": "vlc",
+          "official_url": "https://www.videolan.org/vlc/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "OBS Studio",
+          "description": "Программа для записи и трансляции",
+          "winget_id": "OBSProject.OBSStudio",
+          "choco_id": "obs-studio",
+          "official_url": "https://obsproject.com/",
+          "installer_type": "exe"
+        }
+      ]
+    },
+    "utilities": {
+      "category": "Утилиты",
+      "packages": [
+        {
+          "name": "WinRAR",
+          "description": "Архиватор с поддержкой RAR",
+          "winget_id": "RARLab.WinRAR",
+          "choco_id": "winrar",
+          "official_url": "https://www.win-rar.com/",
+          "installer_type": "exe"
+        }
+      ]
+    },
+    "communication": {
+      "category": "Общение",
+      "packages": [
+        {
+          "name": "Discord",
+          "description": "Мессенджер для геймеров и сообществ",
+          "winget_id": "Discord.Discord",
+          "choco_id": "discord",
+          "official_url": "https://discord.com/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Telegram Desktop",
+          "description": "Клиент Telegram для рабочего стола",
+          "winget_id": "Telegram.TelegramDesktop",
+          "choco_id": "telegram",
+          "official_url": "https://desktop.telegram.org/",
+          "installer_type": "exe"
+        }
+      ]
+    },
+    "productivity": {
+      "category": "Продуктивность",
+      "packages": [
+        {
+          "name": "Obsidian",
+          "description": "Заметки с связями и знаниевые графы",
+          "winget_id": "Obsidian.Obsidian",
+          "choco_id": "obsidian",
+          "official_url": "https://obsidian.md/",
+          "installer_type": "exe"
+        },
+        {
+          "name": "Todoist",
+          "description": "Менеджер задач и планирование",
+          "winget_id": "Doist.Todoist",
+          "choco_id": "todoist",
+          "official_url": "https://todoist.com/",
+          "installer_type": "exe"
+        }
+      ]
+    }
+  },
+  "package_managers": {
+    "winget": {
+      "name": "Windows Package Manager",
+      "description": "Официальный пакетный менеджер Microsoft",
+      "install_command": "winget install",
+      "check_command": "winget --version",
+      "available_by_default": false
+    },
+    "chocolatey": {
+      "name": "Chocolatey",
+      "description": "Популярный пакетный менеджер для Windows",
+      "install_command": "choco install",
+      "check_command": "choco --version",
+      "install_script": "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))",
+      "available_by_default": true
+    }
+  }
+}
+

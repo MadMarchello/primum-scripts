@@ -1,0 +1,181 @@
+{
+  "software": {
+    "development": {
+      "category": "Разработка",
+      "packages": [
+        {
+          "name": "Git",
+          "description": "Система контроля версий",
+          "brew_formula": "git",
+          "official_url": "https://git-scm.com/download/mac",
+          "installer_type": "pkg",
+          "preinstalled": true
+        },
+        {
+          "name": "Cursor",
+          "description": "AI-powered code editor",
+          "brew_cask": null,
+          "official_url": "https://cursor.sh/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Visual Studio Code",
+          "description": "Текстовый редактор для разработки",
+          "brew_cask": "visual-studio-code",
+          "official_url": "https://code.visualstudio.com/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Android Studio",
+          "description": "IDE для разработки Android приложений",
+          "brew_cask": "android-studio",
+          "official_url": "https://developer.android.com/studio",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Docker Desktop",
+          "description": "Контейнеризация приложений",
+          "brew_cask": "docker",
+          "official_url": "https://www.docker.com/products/docker-desktop/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Python",
+          "description": "Язык программирования Python",
+          "brew_formula": "python@3.12",
+          "official_url": "https://www.python.org/downloads/",
+          "installer_type": "pkg",
+          "preinstalled": true,
+          "note": "macOS поставляется с Python 2.7, рекомендуется установить Python 3"
+        },
+        {
+          "name": "Node.js",
+          "description": "JavaScript runtime",
+          "brew_formula": "node",
+          "official_url": "https://nodejs.org/",
+          "installer_type": "pkg"
+        },
+        {
+          "name": "FVM",
+          "description": "Flutter Version Management",
+          "brew_formula": "fvm",
+          "official_url": "https://fvm.app/",
+          "installer_type": "binary"
+        }
+      ]
+    },
+    "browsers": {
+      "category": "Браузеры",
+      "packages": [
+        {
+          "name": "Google Chrome",
+          "description": "Веб-браузер от Google",
+          "brew_cask": "google-chrome",
+          "official_url": "https://www.google.com/chrome/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Perplexity",
+          "description": "AI-powered search and answer engine",
+          "brew_cask": null,
+          "official_url": "https://www.perplexity.ai/",
+          "installer_type": "dmg",
+          "note": "Available as web app or downloadable desktop app"
+        }
+      ]
+    },
+    "media": {
+      "category": "Мультимедиа",
+      "packages": [
+        {
+          "name": "VLC Media Player",
+          "description": "Универсальный медиаплеер",
+          "brew_cask": "vlc",
+          "official_url": "https://www.videolan.org/vlc/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "OBS Studio",
+          "description": "Программа для записи и трансляции",
+          "brew_cask": "obs",
+          "official_url": "https://obsproject.com/",
+          "installer_type": "dmg"
+        }
+      ]
+    },
+    "utilities": {
+      "category": "Утилиты",
+      "packages": [
+        {
+          "name": "7-Zip",
+          "description": "Архиватор файлов",
+          "brew_formula": "p7zip",
+          "brew_cask": "7-zip",
+          "official_url": "https://www.7-zip.org/",
+          "installer_type": "dmg",
+          "note": "Доступен как консольная утилита p7zip или GUI версия 7-Zip"
+        }
+      ]
+    },
+    "communication": {
+      "category": "Общение",
+      "packages": [
+        {
+          "name": "Discord",
+          "description": "Мессенджер для геймеров и сообществ",
+          "brew_cask": "discord",
+          "official_url": "https://discord.com/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Telegram Desktop",
+          "description": "Клиент Telegram для рабочего стола",
+          "brew_cask": "telegram",
+          "app_store": true,
+          "official_url": "https://macos.telegram.org/",
+          "installer_type": "app_store"
+        }
+      ]
+    },
+    "productivity": {
+      "category": "Продуктивность",
+      "packages": [
+        {
+          "name": "Obsidian",
+          "description": "Заметки со связями и знаниевые графы",
+          "brew_cask": "obsidian",
+          "official_url": "https://obsidian.md/",
+          "installer_type": "dmg"
+        },
+        {
+          "name": "Todoist",
+          "description": "Менеджер задач и планирование",
+          "brew_cask": "todoist",
+          "app_store": true,
+          "official_url": "https://todoist.com/",
+          "installer_type": "app_store"
+        }
+      ]
+    }
+  },
+  "package_managers": {
+    "homebrew": {
+      "name": "Homebrew",
+      "description": "Пакетный менеджер для macOS",
+      "install_command": "brew install",
+      "cask_command": "brew install --cask",
+      "check_command": "brew --version",
+      "install_script": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
+      "available_by_default": false
+    },
+    "app_store": {
+      "name": "Mac App Store",
+      "description": "Официальный магазин приложений Apple",
+      "install_command": "mas install",
+      "check_command": "mas version",
+      "install_mas": "brew install mas",
+      "available_by_default": true,
+      "note": "Требует Apple ID для установки приложений"
+    }
+  }
+}

@@ -1,3 +1,3 @@
 @echo off
-powershell -NoProfile -ExecutionPolicy Bypass -Command "'%~dp0install-software.ps1'"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install-software.ps1"
 pause

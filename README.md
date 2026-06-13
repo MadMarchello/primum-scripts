@@ -19,11 +19,16 @@
 
 ```
 primum-scripts/
-├── install-software.bat        # Запускаемый файл для Windows
-├── install-software.ps1        # Основной PowerShell скрипт
+├── install-software.bat        # Запускаемый файл для Windows (установка)
+├── install-software.ps1        # Основной PowerShell скрипт установки
+├── uninstall-software.bat      # Запускаемый файл для Windows (удаление ПО вне Chocolatey)
+├── uninstall-software.ps1      # PowerShell скрипт проверки и удаления ПО вне Chocolatey
 ├── windows-software.json       # База данных программ для Windows
 ├── macos-software.json         # База данных программ для macOS
 └── README.md                   # Документация
+
+После проверки рядом со скриптами создается файл
+non-choco-software-report.txt - отчет о ПО, установленном вне Chocolatey.
 ```
 
 ## ⚡ Быстрый старт
@@ -36,6 +41,12 @@ primum-scripts/
    - `1` - Автоматическая установка всех программ
    - `2` - Интерактивная установка с подтверждением
    - `3` - Показать список установленных программ
+   - `4` - Проверить ПО, установленное вне Chocolatey (создает отчет .txt)
+   - `0` - Выход
+
+Для удаления ПО, установленного вне Chocolatey, запустите `uninstall-software.bat`:
+   - `1` - Проверка и создание отчета `non-choco-software-report.txt`
+   - `2` - Удаление найденных программ через штатные деинсталляторы (с подтверждением)
    - `0` - Выход
 
 ### Альтернативный запуск через PowerShell
@@ -63,8 +74,28 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "install-software.ps1"
 
 ### 3. Список программ
 - Показывает все программы по категориям
-- Отмечает установленные ✓ и неустановленные ✗ программы
+- Отмечает установленные [+] и неустановленные [-] программы
 - Показывает способ установки (Chocolatey)
+
+### 4. Проверка ПО, установленного вне Chocolatey
+- Сканирует реестр Windows ("Удаление программ"):
+  - `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall`
+  - `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall`
+  - `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall`
+- Программа считается установленной вне Chocolatey, если она найдена
+  в реестре, но ее пакет отсутствует в `choco list`
+- Создает отчет `non-choco-software-report.txt` с именем, версией,
+  путем установки (Install path) и строкой деинсталляции (Uninstall)
+- При установке (пункты 1 и 2) такие программы пропускаются,
+  чтобы не дублировать установку
+
+### 5. Удаление ПО вне Chocolatey (uninstall-software.bat)
+- Использует тот же отчет/проверку, что и пункт 4
+- Для каждой найденной программы запрашивает подтверждение (y/n)
+- Запускает штатный деинсталлятор:
+  - MSI пакеты: `msiexec /x {ProductCode}`
+  - Остальные: запуск `uninstall.exe` из строки деинсталляции
+- После удаления проверяет реестр и обновляет отчет
 
 ## 📊 Категории программ
 
